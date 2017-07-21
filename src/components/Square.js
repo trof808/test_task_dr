@@ -1,14 +1,13 @@
 import React, { Component } from 'react';
-import SquareBlock from './SquareBlock';
 
-class Root extends Component {
+class Square extends Component {
     render() {
         return (
             <div>
-                <SquareBlock />
+                {this.props.name}
             </div>
         )
     }
 }
 
-export default Root;
+export default Square;
