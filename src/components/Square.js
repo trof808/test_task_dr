@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 
 class Square extends Component {
+    handleClick = () => {
+        this.props.handleSquareClick(this.props.id)
+    }
     render() {
         const styles = {
             circle: {
@@ -15,7 +18,7 @@ class Square extends Component {
             }
         }
         return (
-            <div className="four wide column" style={styles.square}>
+            <div className="four wide column" style={styles.square} onClick={this.handleClick}>
                 <div style={styles.circle}>
 
                 </div>

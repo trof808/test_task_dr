@@ -28,7 +28,21 @@ class SquareBlock extends Component {
     componentWillMount() {
         this.setState({ squares: squares })
     }
-    
+
+    handleSquareClick = (squareId) => {
+        const nextSquares = this.state.squares.map((square) => {
+            if(squareId === square.id) {
+                return Object.assign({}, square, {
+                    opacity: 1
+                })
+            } else {
+                return square
+            }
+        })
+
+        this.setState({ squares: nextSquares })
+    }
+
     render() {
         const style = {
             border: '1px solid #000'
@@ -43,7 +57,8 @@ class SquareBlock extends Component {
                                 key={square.id} 
                                 id={square.id} 
                                 name={square.name} 
-                                opacity={square.opacity}/>
+                                opacity={square.opacity}
+                                handleSquareClick={this.handleSquareClick}/>
                         ))
                     }
                 </div>
