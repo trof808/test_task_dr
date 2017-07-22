@@ -3,8 +3,11 @@ import SquareBlock from './SquareBlock';
 
 class Root extends Component {
     render() {
+        const style = {
+            padding: '20px'
+        }
         return (
-            <div>
+            <div className="ui stackable grid" style={style}>
                 <SquareBlock />
             </div>
         )
